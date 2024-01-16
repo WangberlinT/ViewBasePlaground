@@ -34,7 +34,8 @@ class TouchPointView @JvmOverloads constructor(
     private var point: PointF = PointF(0f, 0f)
 
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
-        val event = ev ?: return super.dispatchTouchEvent(ev)
+        val result = super.dispatchTouchEvent(ev)
+        val event = ev ?: return result
         when (event.action) {
             MotionEvent.ACTION_DOWN,
             MotionEvent.ACTION_MOVE -> {
@@ -43,20 +44,13 @@ class TouchPointView @JvmOverloads constructor(
             }
             else -> {
                 showTouchPoint = false
-                invalidate()
             }
         }
         invalidate()
-        return super.dispatchTouchEvent(ev)
-    }
-
-    override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
-        Log.d(tag(), "onInterceptTouchEvent action: ${ev?.action}")
-        return super.onInterceptTouchEvent(ev)
+        return result
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
-        Log.d(tag(), "onTouchEvent action: ${event?.action}")
         return true
     }
 

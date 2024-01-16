@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tiki.viewbaseplaground.practice.gesture.dispatch_events.view.LogConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:name="ViewGroupA"
+    android:background="@color/blue"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.tiki.viewbaseplaground.practice.gesture.dispatch_events.view.LogConstraintLayout
+        android:name="ViewGroupB"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/yellow"
+        >
+
+        <com.tiki.viewbaseplaground.practice.gesture.dispatch_events.view.LogView
+            android:background="@color/green"
+            android:name="ViewD"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="150dp"
+            android:clickable="true"
+            />
+
+        <com.tiki.viewbaseplaground.practice.gesture.dispatch_events.view.LogView
+            android:background="@color/grey"
+            android:name="ViewC"
+            android:id="@+id/viewC"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="100dp"
+            />
+
+        <com.tiki.viewbaseplaground.practice.gesture.dispatch_events.view.LogView
+            android:background="@color/blue"
+            android:name="ViewE"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="400dp"
+            />
+
+
+
+    </com.tiki.viewbaseplaground.practice.gesture.dispatch_events.view.LogConstraintLayout>
+
+
+</com.tiki.viewbaseplaground.practice.gesture.dispatch_events.view.LogConstraintLayout>

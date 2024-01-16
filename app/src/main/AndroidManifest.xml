@@ -11,7 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ViewBasePlaground"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".practice.gesture.dispatch_events.view.DispatchEventActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".practice.gesture.ViewPager2GestureTestActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.HomeActivity"
             android:exported="true">
@@ -22,6 +29,5 @@
             </intent-filter>
         </activity>
     </application>
-
 
 </manifest>
