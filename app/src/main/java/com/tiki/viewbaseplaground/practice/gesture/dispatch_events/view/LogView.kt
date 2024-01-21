@@ -12,10 +12,14 @@ class LogView @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
-
+    private var disallowIntercept = false
     private val name: String
     init {
         name = attrs?.getAttributeValue("http://schemas.android.com/apk/res/android", "name") ?: this.hashCode().toString()
+    }
+
+    fun setDisallowIntercept(disallowIntercept: Boolean) {
+        this.disallowIntercept = disallowIntercept
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
@@ -27,6 +31,9 @@ class LogView @JvmOverloads constructor(
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         Log.d(name, "start onTouchEvent: ${event?.getActionName()}")
+        if (event?.action == MotionEvent.ACTION_DOWN) {
+            parent.requestDisallowInterceptTouchEvent(disallowIntercept)
+        }
         val result = super.onTouchEvent(event)
         Log.d(name, "end onTouchEvent: ${event?.getActionName()}, result: $result")
         return result

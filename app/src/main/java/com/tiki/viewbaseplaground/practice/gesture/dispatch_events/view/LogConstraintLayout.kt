@@ -13,8 +13,13 @@ class LogConstraintLayout @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
     private val name: String
+    private var intercept = false
     init {
         name = attrs?.getAttributeValue("http://schemas.android.com/apk/res/android", "name") ?: "${tag()}_${this.hashCode().toString()}"
+    }
+
+    fun setIntercept(intercept: Boolean) {
+        this.intercept = intercept
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
@@ -26,8 +31,8 @@ class LogConstraintLayout @JvmOverloads constructor(
 
     override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
         Log.d(name, "start onInterceptTouchEvent: ${ev?.getActionName()}")
-        val result = super.onInterceptTouchEvent(ev)
-        Log.d(name, "end onInterceptTouchEvent: ${ev?.getActionName()}, result: $result")
+        val result = ev?.action != MotionEvent.ACTION_DOWN && intercept
+        Log.d(name, "end onInterceptTouchEvent: ${ev?.getActionName()}, result: $intercept")
         return result
     }
 

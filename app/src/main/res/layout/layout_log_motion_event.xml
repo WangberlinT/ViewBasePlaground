@@ -2,12 +2,14 @@
 <com.tiki.viewbaseplaground.practice.gesture.dispatch_events.view.LogConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:name="ViewGroupA"
     android:background="@color/blue"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <com.tiki.viewbaseplaground.practice.gesture.dispatch_events.view.LogConstraintLayout
+        android:id="@+id/ViewGroupB"
         android:name="ViewGroupB"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
@@ -16,6 +18,7 @@
         >
 
         <com.tiki.viewbaseplaground.practice.gesture.dispatch_events.view.LogView
+            android:id="@+id/viewD"
             android:background="@color/green"
             android:name="ViewD"
             android:layout_width="200dp"
@@ -33,6 +36,7 @@
             android:id="@+id/viewC"
             android:layout_width="200dp"
             android:layout_height="200dp"
+            android:clickable="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="50dp"
@@ -53,6 +57,74 @@
 
 
     </com.tiki.viewbaseplaground.practice.gesture.dispatch_events.view.LogConstraintLayout>
+
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/viewGroupIntercept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="intercept"
+        app:layout_constraintStart_toStartOf="@id/ViewGroupB"
+        app:layout_constraintTop_toTopOf="@id/ViewGroupB"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/viewGroupConsume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="consume"
+        app:layout_constraintStart_toEndOf="@id/viewGroupIntercept"
+        app:layout_constraintTop_toTopOf="@id/viewGroupIntercept"
+        android:layout_marginStart="10dp"
+        />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/viewCConsume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="consume"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="124dp"
+        />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/viewCDisallow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="disInterc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="164dp"
+        />
+
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/viewDConsume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="consume"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="324dp"
+        />
+
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/viewDDisallow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="disInterc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="225dp"
+        android:layout_marginTop="324dp"
+        />
 
 
 </com.tiki.viewbaseplaground.practice.gesture.dispatch_events.view.LogConstraintLayout>
