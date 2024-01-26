@@ -1,11 +1,10 @@
-package com.tiki.viewbaseplaground.practice.gesture.dispatch_events.view
+package com.tiki.viewbaseplaground.examples.dispatch_events
 
 import android.content.Context
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
-import com.tiki.viewbaseplaground.extensions.tag
 
 class LogView @JvmOverloads constructor(
     context: Context,

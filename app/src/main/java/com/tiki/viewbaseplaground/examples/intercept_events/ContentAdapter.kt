@@ -1,4 +1,4 @@
-package com.tiki.viewbaseplaground.practice.gesture
+package com.tiki.viewbaseplaground.examples.intercept_events
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

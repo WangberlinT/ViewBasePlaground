@@ -1,17 +1,13 @@
-package com.tiki.viewbaseplaground.view
+package com.tiki.viewbaseplaground.home
 
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.PointF
-import android.graphics.drawable.Drawable
 import android.util.AttributeSet
-import android.util.Log
 import android.view.MotionEvent
-import com.tiki.viewbaseplaground.extensions.tag
 import android.widget.FrameLayout
-import androidx.core.view.isVisible
 import com.tiki.viewbaseplaground.extensions.toPx
 
 class TouchPointView @JvmOverloads constructor(

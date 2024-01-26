@@ -1,4 +1,4 @@
-package com.tiki.viewbaseplaground.practice.gesture.dispatch_events.view
+package com.tiki.viewbaseplaground.examples.dispatch_events
 
 import android.content.Context
 import android.util.AttributeSet
@@ -15,7 +15,7 @@ class LogConstraintLayout @JvmOverloads constructor(
     private val name: String
     private var intercept = false
     init {
-        name = attrs?.getAttributeValue("http://schemas.android.com/apk/res/android", "name") ?: "${tag()}_${this.hashCode().toString()}"
+        name = attrs?.getAttributeValue("http://schemas.android.com/apk/res/android", "name") ?: "${tag()}_${this.hashCode()}"
     }
 
     fun setIntercept(intercept: Boolean) {

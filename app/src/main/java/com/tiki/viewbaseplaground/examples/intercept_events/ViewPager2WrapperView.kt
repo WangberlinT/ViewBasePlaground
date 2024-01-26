@@ -1,14 +1,11 @@
-package com.tiki.viewbaseplaground.practice.gesture
+package com.tiki.viewbaseplaground.examples.intercept_events
 
 import android.content.Context
-import android.graphics.PointF
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.FrameLayout
-import androidx.viewpager2.widget.ViewPager2
 import com.tiki.viewbaseplaground.extensions.tag
-import com.tiki.viewbaseplaground.extensions.toPx
 import kotlin.math.abs
 
 class ViewPager2WrapperView @JvmOverloads constructor(
@@ -17,12 +14,11 @@ class ViewPager2WrapperView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
 
-    val thresholdTangent = 1f
-    lateinit var downEvent: MotionEvent
+    private val thresholdTangent = 1f
+    private lateinit var downEvent: MotionEvent
 
-    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+    override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
         val event = ev ?: return super.dispatchTouchEvent(ev)
-        val result = super.dispatchTouchEvent(ev)
         if (event.action == MotionEvent.ACTION_DOWN) {
             Log.d(this.tag(), "ACTION_DOWN")
             downEvent = MotionEvent.obtain(event)
@@ -32,6 +28,6 @@ class ViewPager2WrapperView @JvmOverloads constructor(
         val deltaTangent = deltaY / deltaX
         Log.d(tag(), "deltaTangent: $deltaTangent")
         requestDisallowInterceptTouchEvent(deltaTangent < thresholdTangent)
-        return result
+        return super.onInterceptTouchEvent(ev)
     }
 }

@@ -13,14 +13,14 @@
         android:theme="@style/Theme.ViewBasePlaground"
         tools:targetApi="31">
         <activity
-            android:name=".practice.gesture.dispatch_events.view.DispatchEventActivity"
+            android:name=".examples.dispatch_events.DispatchEventActivity"
             android:exported="false" />
 
         <activity
-            android:name=".practice.gesture.ViewPager2GestureTestActivity"
+            android:name=".examples.intercept_events.ViewPager2GestureTestActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.HomeActivity"
+            android:name=".home.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

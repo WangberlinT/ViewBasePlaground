@@ -1,13 +1,9 @@
-package com.tiki.viewbaseplaground.practice.gesture
+package com.tiki.viewbaseplaground.examples.intercept_events
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
-import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tiki.viewbaseplaground.R
-import com.tiki.viewbaseplaground.activities.BaseActivity
+import com.tiki.viewbaseplaground.home.BaseActivity
 import com.tiki.viewbaseplaground.databinding.ActivityViewPager2GestureTestBinding
 
 class ViewPager2GestureTestActivity : BaseActivity() {

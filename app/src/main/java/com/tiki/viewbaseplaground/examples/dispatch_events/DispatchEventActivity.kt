@@ -1,7 +1,7 @@
-package com.tiki.viewbaseplaground.practice.gesture.dispatch_events.view
+package com.tiki.viewbaseplaground.examples.dispatch_events
 
 import android.os.Bundle
-import com.tiki.viewbaseplaground.activities.BaseActivity
+import com.tiki.viewbaseplaground.home.BaseActivity
 import com.tiki.viewbaseplaground.databinding.LayoutLogMotionEventBinding
 
 class DispatchEventActivity : BaseActivity() {
