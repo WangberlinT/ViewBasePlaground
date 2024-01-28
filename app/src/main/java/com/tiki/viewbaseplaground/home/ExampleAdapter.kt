@@ -8,16 +8,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.tiki.viewbaseplaground.databinding.LayoutExampleItemBinding
 
 class ExampleAdapter(
-    private val onClick: (ExampleItem) -> Unit
-) : ListAdapter<ExampleItem, ExampleAdapter.ViewHolder>(DiffUtil) {
+    private val onClick: (Example) -> Unit
+) : ListAdapter<Example, ExampleAdapter.ViewHolder>(DiffUtil) {
 
     companion object {
-        val DiffUtil = object : DiffUtil.ItemCallback<ExampleItem>() {
-            override fun areItemsTheSame(oldItem: ExampleItem, newItem: ExampleItem): Boolean {
+        val DiffUtil = object : DiffUtil.ItemCallback<Example>() {
+            override fun areItemsTheSame(oldItem: Example, newItem: Example): Boolean {
                 return oldItem.destination == newItem.destination
             }
 
-            override fun areContentsTheSame(oldItem: ExampleItem, newItem: ExampleItem): Boolean {
+            override fun areContentsTheSame(oldItem: Example, newItem: Example): Boolean {
                 return oldItem == newItem
             }
         }
@@ -25,7 +25,7 @@ class ExampleAdapter(
 
     inner class ViewHolder(val binding: LayoutExampleItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: ExampleItem) {
+        fun bind(item: Example) {
             binding.title.text = item.title
             binding.root.setOnClickListener { onClick(item) }
         }
